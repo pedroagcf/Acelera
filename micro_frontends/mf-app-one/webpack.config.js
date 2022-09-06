@@ -41,10 +41,12 @@ module.exports = {
 
   plugins: [
     new ModuleFederationPlugin({
-      name: "mf_app_one",
+      name: "cardList",
       filename: "remoteEntry.js",
       remotes: {},
-      exposes: {},
+      exposes: {
+        "./CardList": "./src/CardList"
+      },
       shared: {
         ...deps,
         react: {

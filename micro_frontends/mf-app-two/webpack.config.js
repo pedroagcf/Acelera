@@ -41,10 +41,12 @@ module.exports = {
 
   plugins: [
     new ModuleFederationPlugin({
-      name: "mf_app_two",
+      name: "banner",
       filename: "remoteEntry.js",
       remotes: {},
-      exposes: {},
+      exposes: {
+        "./Banner": "./src/Banner"
+      },
       shared: {
         ...deps,
         react: {
